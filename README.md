@@ -161,10 +161,7 @@ DB_PASSWORD=your_postgres_password
 JWT_SECRET=replace_this_with_a_long_random_secret
 
 # SMTP (GoDaddy)
-SMTP_HOST=smtpout.secureserver.net
-SMTP_PORT=587
-SMTP_USER=noreply@yourdomain.com
-SMTP_PASS=your_email_password
+RESEND_API_KEY=re_
 ```
 
 | Variable        | Description                                        |
