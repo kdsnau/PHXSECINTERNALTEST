@@ -6,15 +6,18 @@ const NAV = {
     technician: [
         { path: '/dashboard', label: 'Dashboard' },
         { path: '/tickets',   label: 'Tickets'   },
+        { path: '/fleet',     label: 'Fleet'     },
     ],
     accounting: [
         { path: '/dashboard',  label: 'Dashboard'  },
         { path: '/financials', label: 'Financials' },
+        { path: '/fleet',      label: 'Fleet'      },
     ],
     admin: [
         { path: '/dashboard',  label: 'Dashboard'  },
         { path: '/tickets',    label: 'Tickets'    },
         { path: '/financials', label: 'Financials' },
+        { path: '/fleet',      label: 'Fleet'      },
         { path: '/admin',      label: 'Admin'      },
     ],
 };

@@ -5,6 +5,7 @@ import Dashboard  from './pages/Dashboard';
 import Tickets    from './pages/Tickets';
 import Financials from './pages/Financials';
 import Admin      from './pages/Admin';
+import Fleet      from './pages/Fleet';
 
 function PrivateRoute({ children, roles }) {
     const { user } = useAuth();
@@ -17,12 +18,13 @@ function AppRoutes() {
     const { user } = useAuth();
     return (
         <Routes>
-            <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
-            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-            <Route path="/tickets"   element={<PrivateRoute roles={['technician','admin']}><Tickets /></PrivateRoute>} />
+            <Route path="/login"      element={user ? <Navigate to="/dashboard" /> : <Login />} />
+            <Route path="/dashboard"  element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+            <Route path="/tickets"    element={<PrivateRoute roles={['technician','admin']}><Tickets /></PrivateRoute>} />
             <Route path="/financials" element={<PrivateRoute roles={['accounting','admin']}><Financials /></PrivateRoute>} />
-            <Route path="/admin"     element={<PrivateRoute roles={['admin']}><Admin /></PrivateRoute>} />
-            <Route path="*"          element={<Navigate to={user ? '/dashboard' : '/login'} />} />
+            <Route path="/admin"      element={<PrivateRoute roles={['admin']}><Admin /></PrivateRoute>} />
+            <Route path="/fleet"      element={<PrivateRoute><Fleet /></PrivateRoute>} />
+            <Route path="*"           element={<Navigate to={user ? '/dashboard' : '/login'} />} />
         </Routes>
     );
 }
